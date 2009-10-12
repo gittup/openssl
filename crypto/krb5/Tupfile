@@ -1,0 +1,6 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += krb5_asn.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

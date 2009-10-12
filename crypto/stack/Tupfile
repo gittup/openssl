@@ -1,0 +1,6 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += stack.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

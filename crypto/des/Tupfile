@@ -1,0 +1,32 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += des_lib.c
+srcs += set_key.c
+srcs += ecb_enc.c
+srcs += cbc_enc.c
+srcs += ecb3_enc.c
+srcs += cfb64enc.c
+srcs += cfb64ede.c
+srcs += cfb_enc.c
+srcs += ofb64ede.c
+srcs += enc_read.c
+srcs += enc_writ.c
+srcs += ofb64enc.c
+srcs += ofb_enc.c
+srcs += str2key.c
+srcs += pcbc_enc.c
+srcs += qud_cksm.c
+srcs += rand_key.c
+srcs += asm/dx86-elf.s
+srcs += asm/yx86-elf.s
+srcs += fcrypt.c
+srcs += xcbc_enc.c
+srcs += rpc_enc.c
+srcs += cbc_cksm.c
+srcs += ede_cbcm_enc.c
+srcs += des_old.c
+srcs += des_old2.c
+srcs += read2pwd.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

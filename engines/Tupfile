@@ -1,0 +1,14 @@
+include_rules
+
+srcs += e_4758cca.c
+srcs += e_aep.c
+srcs += e_atalla.c
+srcs += e_cswift.c
+srcs += e_gmp.c
+srcs += e_chil.c
+srcs += e_nuron.c
+srcs += e_sureware.c
+srcs += e_ubsec.c
+srcs += e_capi.c
+
+: foreach $(srcs) |> !cc |> %B.o

@@ -1,0 +1,6 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += pqueue.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

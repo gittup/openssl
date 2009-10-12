@@ -1,0 +1,19 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += ec_lib.c
+srcs += ecp_smpl.c
+srcs += ecp_mont.c
+srcs += ecp_nist.c
+srcs += ec_cvt.c
+srcs += ec_mult.c
+srcs += ec_err.c
+srcs += ec_curve.c
+srcs += ec_check.c
+srcs += ec_print.c
+srcs += ec_asn1.c
+srcs += ec_key.c
+srcs += ec2_smpl.c
+srcs += ec2_mult.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

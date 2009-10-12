@@ -1,0 +1,14 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += ocsp_asn.c
+srcs += ocsp_ext.c
+srcs += ocsp_ht.c
+srcs += ocsp_lib.c
+srcs += ocsp_cl.c
+srcs += ocsp_srv.c
+srcs += ocsp_prn.c
+srcs += ocsp_vfy.c
+srcs += ocsp_err.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

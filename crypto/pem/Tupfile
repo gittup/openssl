@@ -1,0 +1,16 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += pem_sign.c
+srcs += pem_seal.c
+srcs += pem_info.c
+srcs += pem_lib.c
+srcs += pem_all.c
+srcs += pem_err.c
+srcs += pem_x509.c
+srcs += pem_xaux.c
+srcs += pem_oth.c
+srcs += pem_pk8.c
+srcs += pem_pkey.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

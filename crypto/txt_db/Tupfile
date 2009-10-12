@@ -1,0 +1,6 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += txt_db.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

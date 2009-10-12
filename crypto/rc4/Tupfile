@@ -1,0 +1,8 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += asm/rx86-elf.s
+srcs += rc4_skey.c
+srcs += rc4_fblk.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

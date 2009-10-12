@@ -1,0 +1,28 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += eng_err.c
+srcs += eng_lib.c
+srcs += eng_list.c
+srcs += eng_init.c
+srcs += eng_ctrl.c
+srcs += eng_table.c
+srcs += eng_pkey.c
+srcs += eng_fat.c
+srcs += eng_all.c
+srcs += tb_rsa.c
+srcs += tb_dsa.c
+srcs += tb_ecdsa.c
+srcs += tb_dh.c
+srcs += tb_ecdh.c
+srcs += tb_rand.c
+srcs += tb_store.c
+srcs += tb_cipher.c
+srcs += tb_digest.c
+srcs += eng_openssl.c
+srcs += eng_cnf.c
+srcs += eng_dyn.c
+srcs += eng_cryptodev.c
+srcs += eng_padlock.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

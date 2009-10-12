@@ -1,0 +1,12 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += pk7_asn1.c
+srcs += pk7_lib.c
+srcs += pkcs7err.c
+srcs += pk7_doit.c
+srcs += pk7_smime.c
+srcs += pk7_attr.c
+srcs += pk7_mime.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

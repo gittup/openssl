@@ -1,0 +1,9 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += ech_lib.c
+srcs += ech_ossl.c
+srcs += ech_key.c
+srcs += ech_err.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

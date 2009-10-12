@@ -1,0 +1,9 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += o_names.c
+srcs += obj_dat.c
+srcs += obj_lib.c
+srcs += obj_err.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

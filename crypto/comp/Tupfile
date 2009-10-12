@@ -1,0 +1,9 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += comp_lib.c
+srcs += comp_err.c
+srcs += c_rle.c
+srcs += c_zlib.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

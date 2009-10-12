@@ -1,0 +1,12 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += conf_err.c
+srcs += conf_lib.c
+srcs += conf_api.c
+srcs += conf_def.c
+srcs += conf_mod.c
+srcs += conf_mall.c
+srcs += conf_sap.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

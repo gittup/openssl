@@ -1,0 +1,59 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += encode.c
+srcs += digest.c
+srcs += dig_eng.c
+srcs += evp_enc.c
+srcs += evp_key.c
+srcs += evp_acnf.c
+srcs += evp_cnf.c
+srcs += e_des.c
+srcs += e_bf.c
+srcs += e_idea.c
+srcs += e_des3.c
+srcs += e_camellia.c
+srcs += e_rc4.c
+srcs += e_aes.c
+srcs += names.c
+srcs += e_seed.c
+srcs += e_xcbc_d.c
+srcs += e_rc2.c
+srcs += e_cast.c
+srcs += e_rc5.c
+srcs += enc_min.c
+srcs += m_null.c
+srcs += m_md2.c
+srcs += m_md4.c
+srcs += m_md5.c
+srcs += m_sha.c
+srcs += m_sha1.c
+srcs += m_dss.c
+srcs += m_dss1.c
+srcs += m_mdc2.c
+srcs += m_ripemd.c
+srcs += m_ecdsa.c
+srcs += p_open.c
+srcs += p_seal.c
+srcs += p_sign.c
+srcs += p_verify.c
+srcs += p_lib.c
+srcs += p_enc.c
+srcs += p_dec.c
+srcs += bio_md.c
+srcs += bio_b64.c
+srcs += bio_enc.c
+srcs += evp_err.c
+srcs += e_null.c
+srcs += c_all.c
+srcs += c_allc.c
+srcs += c_alld.c
+srcs += evp_lib.c
+srcs += bio_ok.c
+srcs += evp_pkey.c
+srcs += evp_pbe.c
+srcs += p5_crpt.c
+srcs += p5_crpt2.c
+srcs += e_old.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

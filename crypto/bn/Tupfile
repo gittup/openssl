@@ -1,0 +1,35 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += bn_add.c
+srcs += bn_div.c
+srcs += bn_exp.c
+srcs += bn_lib.c
+srcs += bn_ctx.c
+srcs += bn_mul.c
+srcs += bn_mod.c
+srcs += bn_print.c
+srcs += bn_rand.c
+srcs += bn_shift.c
+srcs += bn_word.c
+srcs += bn_blind.c
+srcs += bn_kron.c
+srcs += bn_sqrt.c
+srcs += bn_gcd.c
+srcs += bn_prime.c
+srcs += bn_err.c
+srcs += bn_sqr.c
+srcs += asm/bn86-elf.s
+srcs += asm/co86-elf.s
+srcs += bn_recp.c
+srcs += bn_mont.c
+srcs += bn_mpi.c
+srcs += bn_exp2.c
+srcs += bn_gf2m.c
+srcs += bn_nist.c
+srcs += bn_depr.c
+srcs += bn_x931p.c
+srcs += bn_const.c
+srcs += bn_opt.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

@@ -1,0 +1,7 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += md4_dgst.c
+srcs += md4_one.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

@@ -1,0 +1,8 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += buffer.c
+srcs += buf_str.c
+srcs += buf_err.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

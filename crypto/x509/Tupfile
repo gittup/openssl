@@ -1,0 +1,29 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += x509_def.c
+srcs += x509_d2.c
+srcs += x509_r2x.c
+srcs += x509_cmp.c
+srcs += x509_obj.c
+srcs += x509_req.c
+srcs += x509spki.c
+srcs += x509_vfy.c
+srcs += x509_set.c
+srcs += x509cset.c
+srcs += x509rset.c
+srcs += x509_err.c
+srcs += x509name.c
+srcs += x509_v3.c
+srcs += x509_ext.c
+srcs += x509_att.c
+srcs += x509type.c
+srcs += x509_lu.c
+srcs += x_all.c
+srcs += x509_txt.c
+srcs += x509_trs.c
+srcs += by_file.c
+srcs += by_dir.c
+srcs += x509_vpm.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

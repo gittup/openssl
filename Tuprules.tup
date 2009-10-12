@@ -1,0 +1,24 @@
+CFLAGS += -DOPENSSL_THREADS
+CFLAGS += -D_REENTRANT
+CFLAGS += -DDSO_DLFCN
+CFLAGS += -DHAVE_DLFCN_H
+CFLAGS += -DL_ENDIAN
+CFLAGS += -DTERMIO
+CFLAGS += -DOPENSSL_BN_ASM_PART_WORDS
+CFLAGS += -DOPENSSL_IA32_SSE2
+CFLAGS += -DSHA1_ASM
+CFLAGS += -DMD5_ASM
+CFLAGS += -DRMD160_ASM
+CFLAGS += -DAES_ASM
+CFLAGS += -fomit-frame-pointer
+CFLAGS += -Wall
+CFLAGS += -I$(TUP_CWD)
+CFLAGS += -I$(TUP_CWD)/include
+
+# Don't worry about the buildinf.h defines (CFLAGS, DATE, etc)
+CFLAGS += -DNO_WINDOWS_BRAINDEATH
+
+# TODO: proper uClibc headers shouldn't require this
+CFLAGS += -DOPENSSL_IMPLEMENTS_strncasecmp
+
+!openssl_perl = |> ^ PERL %f^ perl %f elf $(CFLAGS) > %o |>

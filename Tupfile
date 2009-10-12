@@ -1,0 +1,52 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+objs += crypto/*.o
+objs += crypto/aes/*.o
+objs += crypto/asn1/*.o
+objs += crypto/bf/*.o
+objs += crypto/bio/*.o
+objs += crypto/bn/*.o
+objs += crypto/buffer/*.o
+objs += crypto/cast/*.o
+objs += crypto/comp/*.o
+objs += crypto/conf/*.o
+objs += crypto/des/*.o
+objs += crypto/dh/*.o
+objs += crypto/dsa/*.o
+objs += crypto/dso/*.o
+objs += crypto/ec/*.o
+objs += crypto/ecdh/*.o
+objs += crypto/ecdsa/*.o
+objs += crypto/engine/*.o
+objs += crypto/err/*.o
+objs += crypto/evp/*.o
+objs += crypto/hmac/*.o
+objs += crypto/idea/*.o
+objs += crypto/krb5/*.o
+objs += crypto/lhash/*.o
+objs += crypto/md2/*.o
+objs += crypto/md4/*.o
+objs += crypto/md5/*.o
+objs += crypto/objects/*.o
+objs += crypto/ocsp/*.o
+objs += crypto/pem/*.o
+objs += crypto/pkcs12/*.o
+objs += crypto/pkcs7/*.o
+objs += crypto/pqueue/*.o
+objs += crypto/rand/*.o
+objs += crypto/rc2/*.o
+objs += crypto/rc4/*.o
+objs += crypto/ripemd/*.o
+objs += crypto/rsa/*.o
+objs += crypto/sha/*.o
+objs += crypto/stack/*.o
+objs += crypto/store/*.o
+objs += crypto/txt_db/*.o
+objs += crypto/ui/*.o
+objs += crypto/x509/*.o
+objs += crypto/x509v3/*.o
+objs += engines/*.o
+
+: $(objs) |> !ar |> libcrypto.a
+endif

@@ -1,0 +1,11 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += ecs_lib.c
+srcs += ecs_asn1.c
+srcs += ecs_ossl.c
+srcs += ecs_sign.c
+srcs += ecs_vrf.c
+srcs += ecs_err.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

@@ -1,0 +1,7 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += lhash.c
+srcs += lh_stats.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

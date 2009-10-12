@@ -1,0 +1,4 @@
+include_rules
+
+: bn-586.pl |> !openssl_perl |> bn86-elf.s
+: co-586.pl |> !openssl_perl |> co86-elf.s

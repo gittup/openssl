@@ -1,0 +1,13 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += aes_misc.c
+srcs += aes_ecb.c
+srcs += aes_cfb.c
+srcs += aes_ofb.c
+srcs += aes_ctr.c
+srcs += aes_ige.c
+srcs += aes_wrap.c
+srcs += asm/ax86-elf.s
+: foreach $(srcs) |> !cc |> %B.o
+endif

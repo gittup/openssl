@@ -1,0 +1,15 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += md_rand.c
+srcs += randfile.c
+srcs += rand_lib.c
+srcs += rand_eng.c
+srcs += rand_err.c
+srcs += rand_egd.c
+srcs += rand_win.c
+srcs += rand_unix.c
+srcs += rand_os2.c
+srcs += rand_nw.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

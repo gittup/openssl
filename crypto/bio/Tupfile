@@ -1,0 +1,24 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += bio_lib.c
+srcs += bio_cb.c
+srcs += bio_err.c
+srcs += bss_mem.c
+srcs += bss_null.c
+srcs += bss_fd.c
+srcs += bss_file.c
+srcs += bss_sock.c
+srcs += bss_conn.c
+srcs += bf_null.c
+srcs += bf_buff.c
+srcs += b_print.c
+srcs += b_dump.c
+srcs += b_sock.c
+srcs += bss_acpt.c
+srcs += bf_nbio.c
+srcs += bss_log.c
+srcs += bss_bio.c
+srcs += bss_dgram.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

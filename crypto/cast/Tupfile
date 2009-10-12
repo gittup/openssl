@@ -1,0 +1,10 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += c_skey.c
+srcs += c_ecb.c
+srcs += asm/cx86-elf.s
+srcs += c_cfb64.c
+srcs += c_ofb64.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

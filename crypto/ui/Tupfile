@@ -1,0 +1,10 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += ui_err.c
+srcs += ui_lib.c
+srcs += ui_openssl.c
+srcs += ui_util.c
+srcs += ui_compat.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

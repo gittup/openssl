@@ -1,0 +1,20 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += p12_add.c
+srcs += p12_asn.c
+srcs += p12_attr.c
+srcs += p12_crpt.c
+srcs += p12_crt.c
+srcs += p12_decr.c
+srcs += p12_init.c
+srcs += p12_key.c
+srcs += p12_kiss.c
+srcs += p12_mutl.c
+srcs += p12_utl.c
+srcs += p12_npas.c
+srcs += pk12err.c
+srcs += p12_p8d.c
+srcs += p12_p8e.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

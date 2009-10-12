@@ -1,0 +1,11 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += err.c
+srcs += err_def.c
+srcs += err_all.c
+srcs += err_prn.c
+srcs += err_str.c
+srcs += err_bio.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

@@ -1,0 +1,13 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += sha_dgst.c
+srcs += sha1dgst.c
+srcs += sha_one.c
+srcs += sha1_one.c
+srcs += sha256.c
+srcs += sha512.c
+srcs += asm/sx86-elf.s
+srcs += asm/s512sse2-elf.s
+: foreach $(srcs) |> !cc |> %B.o
+endif

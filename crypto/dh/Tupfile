@@ -1,0 +1,12 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += dh_asn1.c
+srcs += dh_gen.c
+srcs += dh_key.c
+srcs += dh_lib.c
+srcs += dh_check.c
+srcs += dh_err.c
+srcs += dh_depr.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

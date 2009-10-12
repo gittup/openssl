@@ -1,0 +1,23 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += rsa_eay.c
+srcs += rsa_gen.c
+srcs += rsa_lib.c
+srcs += rsa_sign.c
+srcs += rsa_saos.c
+srcs += rsa_err.c
+srcs += rsa_pk1.c
+srcs += rsa_ssl.c
+srcs += rsa_none.c
+srcs += rsa_oaep.c
+srcs += rsa_chk.c
+srcs += rsa_null.c
+srcs += rsa_pss.c
+srcs += rsa_x931.c
+srcs += rsa_x931g.c
+srcs += rsa_asn1.c
+srcs += rsa_depr.c
+srcs += rsa_eng.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

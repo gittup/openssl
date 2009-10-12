@@ -1,0 +1,8 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += md5_dgst.c
+srcs += md5_one.c
+srcs += asm/mx86-elf.s
+: foreach $(srcs) |> !cc |> %B.o
+endif

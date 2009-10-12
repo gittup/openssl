@@ -1,0 +1,23 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += cryptlib.c
+srcs += dyn_lck.c
+srcs += mem.c
+srcs += mem_clr.c
+srcs += mem_dbg.c
+srcs += cversion.c
+srcs += ex_data.c
+srcs += tmdiff.c
+srcs += cpt_err.c
+srcs += ebcdic.c
+srcs += uid.c
+srcs += o_time.c
+srcs += o_str.c
+srcs += o_dir.c
+srcs += o_init.c
+srcs += fips_err.c
+: x86cpuid.pl |> !openssl_perl |> x86cpuid-elf.s
+srcs += x86cpuid-elf.s
+: foreach $(srcs) |> !cc |> %B.o
+endif

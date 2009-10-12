@@ -1,0 +1,15 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += dsa_gen.c
+srcs += dsa_key.c
+srcs += dsa_lib.c
+srcs += dsa_asn1.c
+srcs += dsa_vrf.c
+srcs += dsa_sign.c
+srcs += dsa_err.c
+srcs += dsa_ossl.c
+srcs += dsa_depr.c
+srcs += dsa_utl.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

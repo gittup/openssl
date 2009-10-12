@@ -1,0 +1,41 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += v3_bcons.c
+srcs += v3_bitst.c
+srcs += v3_conf.c
+srcs += v3_extku.c
+srcs += v3_ia5.c
+srcs += v3_lib.c
+srcs += v3_prn.c
+srcs += v3_utl.c
+srcs += v3err.c
+srcs += v3_genn.c
+srcs += v3_alt.c
+srcs += v3_skey.c
+srcs += v3_akey.c
+srcs += v3_pku.c
+srcs += v3_int.c
+srcs += v3_enum.c
+srcs += v3_sxnet.c
+srcs += v3_cpols.c
+srcs += v3_crld.c
+srcs += v3_purp.c
+srcs += v3_info.c
+srcs += v3_ocsp.c
+srcs += v3_akeya.c
+srcs += v3_pmaps.c
+srcs += v3_pcons.c
+srcs += v3_ncons.c
+srcs += v3_pcia.c
+srcs += v3_pci.c
+srcs += pcy_cache.c
+srcs += pcy_node.c
+srcs += pcy_data.c
+srcs += pcy_map.c
+srcs += pcy_tree.c
+srcs += pcy_lib.c
+srcs += v3_asid.c
+srcs += v3_addr.c
+: foreach $(srcs) |> !cc |> %B.o
+endif

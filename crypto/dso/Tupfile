@@ -1,0 +1,13 @@
+ifeq (@(OPENSSL),y)
+include_rules
+
+srcs += dso_dl.c
+srcs += dso_dlfcn.c
+srcs += dso_err.c
+srcs += dso_lib.c
+srcs += dso_null.c
+srcs += dso_openssl.c
+srcs += dso_win32.c
+srcs += dso_vms.c
+: foreach $(srcs) |> !cc |> %B.o
+endif
