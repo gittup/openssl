@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : aes-586.pl |> !openssl_perl |> ax86-elf.s
+endif

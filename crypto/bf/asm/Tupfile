@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : bf-586.pl |> !openssl_perl |> bx86-elf.s
+endif

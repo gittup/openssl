@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : md5-586.pl |> !openssl_perl |> mx86-elf.s
+endif

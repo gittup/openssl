@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : rmd-586.pl |> !openssl_perl |> rm86-elf.s
+endif

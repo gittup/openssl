@@ -1,3 +1,4 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 srcs += e_4758cca.c
@@ -12,3 +13,4 @@ srcs += e_ubsec.c
 srcs += e_capi.c
 
 : foreach $(srcs) |> !cc |> %B.o
+endif

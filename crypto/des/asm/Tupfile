@@ -1,4 +1,6 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : des-586.pl |> !openssl_perl |> dx86-elf.s
 : crypt586.pl |> !openssl_perl |> yx86-elf.s
+endif

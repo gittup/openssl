@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : cast-586.pl |> !openssl_perl |> cx86-elf.s
+endif

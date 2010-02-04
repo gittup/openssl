@@ -1,4 +1,6 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : sha1-586.pl |> !openssl_perl |> sx86-elf.s
 : sha512-sse2.pl |> !openssl_perl |> s512sse2-elf.s
+endif

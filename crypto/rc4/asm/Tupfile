@@ -1,3 +1,5 @@
+ifeq (@(OPENSSL),y)
 include_rules
 
 : rc4-586.pl |> !openssl_perl |> rx86-elf.s
+endif
